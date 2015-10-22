@@ -4,8 +4,8 @@ var feedback = document.getElementById('feedback');
 function checkPassword(length, password) {
 	var veryWeak = /\d+/;
 	var weak = /[a-z]+/i;
-	var strong = /(?=[a-z]+)(?=\d+)/i;
-	var veryStrong = /(?=[a-z]+)(?=\d+)(?=[!@#$%^&*()?]+)/i;
+	var strong = /(?=.*[a-z]+)(?=.*\d+)/i;
+	var veryStrong = /(?=.*[a-z]+)(?=.*\d+)(?=.*[!@#$%^&*?]+)/i;
 	if(length > 7) {
 		if(veryStrong.test(password)) {
 			return feedback.innerHTML = 'That\'s a good, strong password.';
